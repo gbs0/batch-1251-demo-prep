@@ -1,0 +1,8 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><%= restaurant.name %></h5>
+    <p class="card-text"><%= restaurant.description.truncate(86) %></p>
+    <%= link_to "See restaurant", restaurant_path(restaurant), class: "btn btn-success" %>
+    <%= link_to "Edit", edit_restaurant_path(restaurant), class: "ms-3 link-secondary" %>
+  </div>
+</div>
