@@ -1,11 +1,17 @@
+<div data-controller="character-counter">
 <%= simple_form_for [restaurant, review] do |f| %>
   <%= f.input :content,
               wrapper_html: { class: "mb-4" },
+              input_html: { data: { character_counter_target: "input" } },
               label_html: { class: "form-label text-secondary fw-bold" } %>
   <%= f.input :grade,
               as: :select,
               collection: Review.grades.keys,
               wrapper_html: { class: "mb-4" },
               label_html: { class: "form-label text-secondary fw-bold" } %>
+  
+  <p>Description is currently <strong data-character-counter-target="counter"></strong> characters long.</p>
+
   <%= f.submit review.new_record? ? "Add review" : "Update review", class:"btn btn-primary" %>
 <% end %>
+</div>

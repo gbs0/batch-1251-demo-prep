@@ -1,6 +1,7 @@
-<div class="card mb-4">
+<div class="card mb-4" data-controller="popover" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover" data-bs-content="<%= restaurant.description %>">
   <div class="card-body">
     <h5 class="card-title"><%= restaurant.name %></h5>
+    <i class="fa-solid fa-circle-info" data-controller="tooltip"  data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="<%= pluralize(restaurant.reviews.size, "review") %>"></i>
     <p class="card-text"><%= restaurant.description.truncate(86) %></p>
     <%= link_to "See restaurant", restaurant_path(restaurant), class: "btn btn-success" %>
     <%= link_to "Edit", edit_restaurant_path(restaurant), class: "ms-3 link-secondary" %>
